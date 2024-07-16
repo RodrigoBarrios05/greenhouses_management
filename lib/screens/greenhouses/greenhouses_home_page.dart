@@ -3,19 +3,23 @@ import 'package:greenhouses_management/screens/greenhouses/greenhouse_list_widge
 import 'package:greenhouses_management/utils/seed.dart';
 
 class GreenhousesHomePage extends StatelessWidget {
+  const GreenhousesHomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Greenhouses Home Page'),
+        title: const Text('Greenhouses Home Page'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            GreenhouseListWidget(greenhouses: exampleGreenhouses),
+            Expanded(
+              child: GreenhouseListWidget(greenhouses: exampleGreenhouses),
+            ),
           ],
-        )
+        ),
       ),
     );
   }

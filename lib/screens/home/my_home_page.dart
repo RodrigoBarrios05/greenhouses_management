@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:greenhouses_management/screens/crops/crops_home_page.dart';
 import 'package:greenhouses_management/screens/greenhouses/greenhouse_list_widget.dart';
+import 'package:greenhouses_management/screens/greenhouses/greenhouses_home_page.dart';
 import 'package:greenhouses_management/utils/seed.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -24,9 +26,32 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Expanded( // Agregado aquí
-              child: GreenhouseListWidget(greenhouses: exampleGreenhouses),
+            Card(
+              child: ListTile(
+                title: Text('Greenhouses'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const GreenhousesHomePage(),
+                    ),
+                  );
+                },
+              ),
             ),
+             Card(
+              child: ListTile(
+                title: Text('Crops'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => CropsHomePage(),
+                    ),
+                  );
+                },
+              ),
+            )
           ],
         ),
       ),
